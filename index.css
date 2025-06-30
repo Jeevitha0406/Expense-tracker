@@ -1,0 +1,55 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 253 53% 98%;
+    --foreground: 240 32% 18%;
+    --card: 255 36% 96%;
+    --card-foreground: 240 32% 18%;
+    --primary: 254 83% 75%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 254 62% 92%;
+    --secondary-foreground: 240 32% 24%;
+    --muted: 255 44% 90%;
+    --muted-foreground: 251 27% 58%;
+    --accent: 253 83% 92%;
+    --accent-foreground: 251 28% 48%;
+    --destructive: 342 77% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 253 31% 90%;
+    --input: 253 31% 90%;
+    --ring: 254 83% 75%;
+    --radius: 1rem;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-br from-primary/15 via-secondary/60 to-accent/80 text-foreground antialiased min-h-screen scroll-smooth;
+  }
+}
+
+.bg-glass {
+  @apply bg-white/40 backdrop-blur-2xl border border-white/20 rounded-xl shadow-lg;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  }
+}
